@@ -5,7 +5,7 @@ export default function FloatingPhotos({ photos, reducedMotion }) {
   const elRefs = useRef([]);
 
   useEffect(() => {
-    const speedFactor = reducedMotion ? 0.25 : 1;
+    const speedFactor = reducedMotion ? 0.5 : 1;
     let w = window.innerWidth;
     let h = window.innerHeight;
     const small = w < 640;
@@ -14,7 +14,7 @@ export default function FloatingPhotos({ photos, reducedMotion }) {
     const items = photos.map(() => {
       const size = (small ? 90 : 130) + Math.random() * (small ? 60 : 110);
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.3 + Math.random() * 0.7;
+      const speed = 0.5 + Math.random() * 0.7;
       return {
         size,
         height: size * 1.2,
@@ -54,10 +54,22 @@ export default function FloatingPhotos({ photos, reducedMotion }) {
         it.rot += it.vr * speedFactor;
 
         // Soft bounce off the edges
-        if (it.x < 0) { it.x = 0; it.vx = Math.abs(it.vx); }
-        if (it.x > w - it.size) { it.x = w - it.size; it.vx = -Math.abs(it.vx); }
-        if (it.y < 0) { it.y = 0; it.vy = Math.abs(it.vy); }
-        if (it.y > h - it.height) { it.y = h - it.height; it.vy = -Math.abs(it.vy); }
+        if (it.x < 0) {
+          it.x = 0;
+          it.vx = Math.abs(it.vx);
+        }
+        if (it.x > w - it.size) {
+          it.x = w - it.size;
+          it.vx = -Math.abs(it.vx);
+        }
+        if (it.y < 0) {
+          it.y = 0;
+          it.vy = Math.abs(it.vy);
+        }
+        if (it.y > h - it.height) {
+          it.y = h - it.height;
+          it.vy = -Math.abs(it.vy);
+        }
 
         el.style.transform = `translate3d(${it.x}px, ${it.y}px, 0) rotate(${it.rot}deg)`;
       });

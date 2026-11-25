@@ -5,30 +5,38 @@ import FloatingPhotos from "./FloatingPhotos.jsx";
 const PARTNER_NAME = "My Viola";
 
 const MESSAGE =
-  "Every day with you feels like a celebration. Thank you for all the laughs, the adventures and the little moments. I love you, and I hope this year is as wonderful as you are. ❤️";
+  "Every day with you feels like a celebration. Thank you for all the laughs, the adventures and the little moments. I love you, and I hope your next chapter is as wonderful as you are. Welcome to your golden year ❤️";
 
 // Files inside /public/photos — add or remove filenames here
 const PHOTOS = [
-  "photo1.svg",
-  "photo2.svg",
-  "photo3.svg",
-  "photo4.svg",
-  "photo5.svg",
-  "photo6.svg",
-  "photo7.svg",
-  "photo8.svg",
+  "viola.jpg",
+  "viola1.jpg",
+  "viola2.jpg",
+  "viola3.JPG",
+  "viola4.jpg",
+  "viola5.jpg",
+  "viola6.JPG",
+  "viola7.JPG",
+  "viola8.jpg",
+  "viola9.jpg",
+  "viola10.jpg",
+  "viola12.JPG",
+  "viola13.jpg",
+  "viola14.jpg",
+  "viola15.jpg",
+  "viola16.JPG",
 ];
 
-const MUSIC_SRC = "/audio/dancin.mp3";
+const MUSIC_SRC = "/audio/wedwa.mp3";
 // ----------------------------------------------------
 
 const CONFETTI_COLORS = [
-  "#ff8fab",
-  "#ffb3c6",
-  "#ffd166",
-  "#fff",
-  "#f4a261",
-  "#cdb4db",
+  "#d4af37",
+  "#f3d97d",
+  "#ffffff",
+  "#c59b27",
+  "#faecc2",
+  "#e6be53",
 ];
 
 function Confetti() {
@@ -98,7 +106,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <audio ref={audioRef} src={MUSIC_SRC} loop preload="auto" />
+      <audio ref={audioRef} src={MUSIC_SRC + "#t=07"} loop preload="auto" />
 
       {opened && (
         <>
