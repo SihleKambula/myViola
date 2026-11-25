@@ -92,6 +92,8 @@ export default function FloatingPhotos({ photos, reducedMotion }) {
           className="photo"
           src={`${import.meta.env.BASE_URL}photos/${name}`}
           alt=""
+          loading="lazy"
+          decoding="async"
           draggable="false"
         />
       ))}
